@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Skills-Javascript</title>
   <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <style>
     body {
       counter-reset: h3counter;
@@ -170,7 +171,7 @@
   }
 
   formButton.addEventListener('click', preventForm);
-  
+
 </script>
 
 <div class="hint">
@@ -202,20 +203,19 @@
 <script>
 //  Here's a stub of a function you can use!
 
-//  function reverseString() {
-//    var msg = "Porcupines are cute";
-//
-//    // do some stuff here to reverse that string into a new variable
-//    var newMsg = "This should be the reversed string";
-//
-//    alert(newMsg);
-//  }
+ function reverseString() {
+   var msg = "Porcupines are cute";
+   // do some stuff here to reverse that string into a new variable
+   var newMsg = msg.split("").reverse().join("");
+
+   alert(newMsg);
+ }
 
 // Here's a stub of event stuff you could use
 //
 
-//  var button = document.getElementById('reverse-string-button');
-//  button.addEventListener('click', reverseString);
+ var button = document.getElementById('reverse-string-button');
+ button.addEventListener('click', reverseString);
 </script>
 
 
@@ -240,6 +240,11 @@
 
 <script>
   // code here for above problem
+  function popUP(evt) {
+    alert("You triggered a pop up message!");
+  }
+
+  $(".tricky-to-find").on('click', popUP);
 </script>
 
 <div class="hint">
@@ -266,7 +271,14 @@
 </fieldset>
 
 <script>
-  // put your code here
+var animalPhoto = $('#kittenz-rule');
+
+function changeToDo(evt) {
+  animalPhoto.attr('src', 'https://img0.etsystatic.com/003/0/6206486/il_570xN.353704174_mnjp.jpg');
+}
+
+animalPhoto.on('dblclick', changeToDo);
+
 </script>
 
 <div class="hint">
@@ -299,7 +311,13 @@
 </fieldset>
 
 <script>
-  // put your code here
+  $("#make-a-porcupine").on('click', function() {
+    setTimeout(function() {
+      $("#cute-porcupine-image").fadeIn('slow');
+      }, 1000)
+    });
+
+
 </script>
 
 <div class="hint">
