@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Skills-Javascript</title>
   <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <style>
     body {
       counter-reset: h3counter;
@@ -360,7 +359,15 @@ animalPhoto.on('dblclick', changeToDo);
 </fieldset>
 
 <script>
-  // put your code here
+  var submitButton = $('input[value="I\'m Very Agreeable"]');
+  function agree(evt) {
+    evt.preventDefault();
+    var food = $("#favorite-food-input").val();
+    $("#agreeable-text").html("I like " + food + " too!");
+  }
+
+  submitButton.on('click', agree);
+
 </script>
 
 <div class="hint">
